@@ -17,10 +17,10 @@ class Solution:
         y_hat = 1.0 / (1.0 + np.exp(-z))
 
         error = y_hat - y_true
-        sigmoid_deriv = y_hat * (1.0  - y_hat)
+        sigmoid_deriv = y_hat * (1.0 - y_hat)
         delta = error * sigmoid_deriv
 
         dL_dw = np.round(delta * x, 5)
-        dL_db = np.round(float(delta), 5)
+        dL_db = round(float(delta), 5)
 
         return (dL_dw, dL_db)
