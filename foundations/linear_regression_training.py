@@ -29,4 +29,5 @@ class Solution:
             for j in range(len(initial_weights)):
                 gradient = self.get_derivative(prediction, Y, len(X), X, j)
                 initial_weights[j] -= gradient * self.learning_rate
+        
         return np.round(initial_weights, 5)
