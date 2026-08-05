@@ -9,6 +9,6 @@ class Solution:
         # Return result rounded to 4 decimal places as a list
         x = np.array(x)
         gamma = np.array(gamma)
-        rms = np.sqrt(np.mean(x **2) + eps)
+        rms = np.sqrt(np.mean(x**2) + eps)
         x_hat = x / rms
         return np.round(gamma * x_hat, 4).tolist()
