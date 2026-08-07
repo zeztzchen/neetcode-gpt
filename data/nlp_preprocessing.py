@@ -12,7 +12,8 @@ class Solution:
         combined = positive + negative
 
         vocabulary = sorted({word for sentence in combined for word in sentence.split()})
-        word_to_id = {word:idx + 1 for idx, word in enumerate(vocabulary)}
+
+        word_to_id = {word: idx + 1 for idx, word in enumerate(vocabulary)}
 
         encoded = [torch.tensor([word_to_id[w] for w in s.split()]) for s in combined]
 
