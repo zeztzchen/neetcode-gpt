@@ -14,7 +14,7 @@ class MultiHeadedSelfAttention(nn.Module):
         self.att_heads = nn.ModuleList()
         for i in range(num_heads):
             self.att_heads.append(self.SingleHeadAttention(embedding_dim, attention_dim // num_heads))
-            self.output_proj = nn.Linear(attention_dim, attention_dim, bias = False)
+        self.output_proj = nn.Linear(attention_dim, attention_dim, bias=False)
 
     def forward(self, embedded: TensorType[float]) -> TensorType[float]:
         # Run each head on the input, concatenate outputs along dim=2
